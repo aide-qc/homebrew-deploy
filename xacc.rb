@@ -9,12 +9,12 @@ class Xacc < Formula
   sha256 "02da8022fcc2afec0945a09b9614c0683bd0d9100faf42c7af18d3d05250603c"
   license "EPL and EDL"
 
-  depends_on "cmake" => :build
-  depends_on "ninja" => :build
-  depends_on "gcc@10" => :build
-  depends_on "python3" => :build
-  depends_on "openssl" => :build
-  depends_on "curl" => :build
+  depends_on "cmake"
+  depends_on "ninja"
+  depends_on "gcc@10"
+  depends_on "python3"
+  depends_on "openssl"
+  depends_on "curl"
 
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray/xacc--1.0.0.mojave.bottle.tar.gz" => :mojave

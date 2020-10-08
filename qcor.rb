@@ -9,10 +9,10 @@ class Qcor < Formula
   sha256 "23592862c224eeb11b9129e72688ff20b3b0e2271f1a19788048c9c52fd8a562"
   license "BSD-3"
 
-  depends_on "cmake" => :build
-  depends_on "llvm-csp" => :build
-  depends_on "xacc" => :build
-  depends_on "gcc@10" => :build
+  depends_on "cmake"
+  depends_on "llvm-csp"
+  depends_on "xacc"
+  depends_on "gcc@10"
 
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
