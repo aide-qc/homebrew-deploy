@@ -1,24 +1,21 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Xacc < Formula
   desc "xacc quantum programming framework"
   homepage "https://github.com/eclipse/xacc"
   url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray/xacc-1.0.0.tar.gz"
   version "1.0.0"
-  sha256 "02da8022fcc2afec0945a09b9614c0683bd0d9100faf42c7af18d3d05250603c"
+  sha256 "805006843db59b248da071d925f9df14f5841f2453ad9f10269a3843a711fa01"
   license "EPL and EDL"
 
-  depends_on "cmake"
-  depends_on "ninja"
-  depends_on "gcc@10"
-  depends_on "python3"
-  depends_on "openssl"
-  depends_on "curl"
+  depends_on "cmake" => :build
+  depends_on "ninja" => :build
+  depends_on "gcc@10" => :build
+  depends_on "python3" => :build
+  depends_on "openssl" => :build
+  depends_on "curl" => :build
 
   bottle do
-    root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray/xacc--1.0.0.mojave.bottle.tar.gz" => :mojave
-    sha256 "a55240619050654847cca87c910be5b195daa25e99c63a19af2e87f05177049c" => :mojave
+    root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
+    sha256 "e3ddae7ce55596a27db0fda47ae2aed99357434155c8de7c68cb2fdc61fb1fbc" => :mojave
   end
 
   def install
@@ -35,7 +32,7 @@ class Xacc < Formula
     mkdir xaccpath/"build" do
        system "cmake", "..", *(std_cmake_args + args)
        system "cmake", "--build", ".", "--target", "install"
-    end 
+    end
   end
 
 end
