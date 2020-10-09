@@ -21,7 +21,10 @@ class Qcor < Formula
       system "cmake", "--build", ".", "--target", "install"
     end
   end
-  caveats do
-    path_environment_variable '#{opt_prefix}/bin/qcor'
+  def caveats
+    <<~EOS
+      To use qcor, ensure that #{opt_prefix}/bin is in your PATH:
+        export PATH=$PATH:#{opt_prefix}/bin 
+    EOS
   end
 end
