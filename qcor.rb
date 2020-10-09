@@ -8,6 +8,7 @@ class Qcor < Formula
 
   depends_on "cmake"
   depends_on "llvm-csp"
+  depends_on "python3"
   depends_on "gcc@10"
 
   bottle do
