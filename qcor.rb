@@ -7,6 +7,7 @@ class Qcor < Formula
   license "BSD-3"
 
   depends_on "cmake"
+  depends_on "ninja"
   depends_on "llvm-csp"
   depends_on "python3"
   depends_on "gcc@10"
@@ -18,9 +19,6 @@ class Qcor < Formula
 
   def install
     system "sh", "scripts/macosx/homebrew_build_xacc_and_qcor.sh", "#{prefix}", "cmake"
-    mkdir buildpath/"build" do
-      system "cmake", "--build", ".", "--target", "install"
-    end
   end
   def caveats
     <<~EOS
