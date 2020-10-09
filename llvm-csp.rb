@@ -14,8 +14,7 @@ class LlvmCsp < Formula
   depends_on "gcc@10" => :build
 
   bottle do
-    root_url "https://github.com/ORNL-QCI/llvm-project-csp/releases/download/1.0.0/" => :mojave
-    cellar :any
+    root_url "https://github.com/ORNL-QCI/llvm-project-csp/releases/download/1.0.0"
     sha256 "99bcaa48f7f05f92f108763e434d5ffa06b2e732e3aa098d21205f4a8c250667" => :mojave
   end
 
