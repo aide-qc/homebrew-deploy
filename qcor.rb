@@ -21,4 +21,7 @@ class Qcor < Formula
       system "cmake", "--build", ".", "--target", "install"
     end
   end
+  caveats do
+    path_environment_variable '#{opt_prefix}/bin/qcor'
+  end
 end
