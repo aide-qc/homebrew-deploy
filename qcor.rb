@@ -6,7 +6,7 @@ class Qcor < Formula
   homepage "https://github.com/ornl-qci/qcor"
   url "https://github.com/ornl-qci/qcor/tarball/master"
   version "1.0.0"
-  sha256 "23592862c224eeb11b9129e72688ff20b3b0e2271f1a19788048c9c52fd8a562"
+  sha256 "db7e48bb3628df7230e14b24668f7ba73bd7d5a4d88bfc942d6fa31ed8bd37fc"
   license "BSD-3"
 
   depends_on "cmake"
@@ -32,10 +32,11 @@ class Qcor < Formula
     ]
 
     qcorpath = buildpath
-    mkdir qcorpath/"build" do
-       system "cmake", "..", *(std_cmake_args+args)
-       system "cmake", "--build", ".", "--target", "install"
-       bin.install #{bin}/qcor
+    system "sh", "scripts/macosx/homebrew_build_xacc_and_qcor.sh", #{prefix}, "cmake"
+#    mkdir qcorpath/"build" do
+#       system "cmake", "..", *(std_cmake_args+args)
+#       system "cmake", "--build", ".", "--target", "install"
+    bin.install #{bin}/qcor
     end 
   end
 end
