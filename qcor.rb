@@ -37,6 +37,6 @@ class Qcor < Formula
 #       system "cmake", "..", *(std_cmake_args+args)
 #       system "cmake", "--build", ".", "--target", "install"
     bin.install #{bin}/qcor
-    end 
+#    end 
   end
 end
