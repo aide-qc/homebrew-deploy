@@ -3,13 +3,11 @@ class Qcor < Formula
   homepage "https://github.com/ornl-qci/qcor"
   url "https://github.com/ornl-qci/qcor/tarball/master"
   version "1.0.0"
-  sha256 "07bbf1cd95041a6a594187c81cf123db92becd46bdfebd298372f5c35aebf81a"
+  sha256 "21cee506769e4cf0d94228f4938f6098214334121f03307f348e3f8d5e71a8a4"
   license "BSD-3"
 
-  depends_on "cmake"
-  depends_on "ninja"
   depends_on "llvm-csp"
-  depends_on "python3"
+  depends_on "xacc"
   depends_on "gcc@10"
 
   bottle do
@@ -29,7 +27,6 @@ class Qcor < Formula
       -G Ninja
     ]
 
-    system "sh", "scripts/macosx/homebrew_build_xacc_and_qcor.sh", "#{prefix}", "cmake"
     qcorpath = buildpath
     mkdir qcorpath/"build" do
        system "cmake", "..", *(std_cmake_args + args)
