@@ -8,7 +8,7 @@ class Xacc < Formula
 
   depends_on "cmake"
   depends_on "ninja"
-  depends_on "gcc@10"
+  depends_on "gcc@10" 
   depends_on "python3"
   depends_on "openssl"
   depends_on "curl"
@@ -16,12 +16,10 @@ class Xacc < Formula
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
     sha256 "8088e4f933481c7a7bff96c91392880490a2a0415df3f7be0d46ba53e5315262" => :mojave
-    sha256 "5e8474c2200989b95531c1e1c6e136b3b7e470bb0f0230a540fd59d37f2c918e" => :x86_64_linux
+    sha256 "2aad189b2a476ba90c07b5044de6b3c4c39482788cce2c682d1a87cb3433a4f6" => :x86_64_linux
   end
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
     args = %W[
       -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_CXX_COMPILER=g++-10

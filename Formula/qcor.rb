@@ -8,22 +8,22 @@ class Qcor < Formula
 
   depends_on "llvm-csp"
   depends_on "xacc"
-  depends_on "gcc@10"
 
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
     sha256 "8713933b6b9797c61cb92f2d886f98459c991d87cea5e410685ec7f171174e79" => :mojave
+    sha256 "f4c3a17ae0c3e19311c208133c710950f51cae0698cf8ee3923e621cfacc05be" => :x86_64_linux
   end
 
   def install
     args = %W[
       -DCMAKE_BUILD_TYPE=Release
-      -DCMAKE_CXX_COMPILER=/usr/local/opt/gcc/bin/g++-10
-      -DCMAKE_C_COMPILER=/usr/local/opt/gcc/bin/gcc-10
-      -DXACC_DIR=#{prefix}
-      -DQCOR_EXTRA_HEADERS="/usr/local/opt/gcc/include/c++/10.2.0;/usr/local/opt/gcc/include/c++/10.2.0/x86_64-apple-darwin18"
-      -DGCC_STDCXX_PATH=/usr/local/opt/gcc/lib/gcc/10
-      -DLLVM_ROOT=/usr/local/opt/llvm-csp 
+      -DCMAKE_CXX_COMPILER=#{HOMEBREW_PREFIX}/opt/gcc@10/bin/g++-10
+      -DCMAKE_C_COMPILER=#{HOMEBREW_PREFIX}/opt/gcc@10/bin/gcc-10
+      -DXACC_DIR=#{HOMEBREW_PREFIX}/opt/xacc
+      -DQCOR_EXTRA_HEADERS="#{HOMEBREW_PREFIX}/opt/gcc@10/include/c++/10.2.0;#{HOMEBREW_PREFIX}/opt/gcc@10/include/c++/10.2.0/x86_64-apple-darwin18"
+      -DGCC_STDCXX_PATH=#{HOMEBREW_PREFIX}/opt/gcc@10/lib/gcc/10
+      -DLLVM_ROOT=#{HOMEBREW_PREFIX}/opt/llvm-csp 
       -G Ninja
     ]
 
