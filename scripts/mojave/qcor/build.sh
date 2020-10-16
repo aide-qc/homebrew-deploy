@@ -16,5 +16,5 @@ git add Formula/qcor.rb && git commit -m "uploading updated qcor bottle sha"
 git config remote.aideqchbdeploy.url >&- || git remote add -t master aideqchbdeploy https://amccaskey:$AIDEQC_ACCESS_TOKEN@github.com/aide-qc/homebrew-deploy 
 git push -f aideqchbdeploy HEAD:master 
 brew install jfrog-cli 
-jfrog bt c --interactive=false --user=amccaskey --key=$JFROG_API_KEY \
+jfrog bt c --interactive=false --user=amccaskey --key=$JFROG_API_KEY 
 jfrog bt u --override --publish qcor-1.0.0.mojave.bottle.tar.gz amccaskey/qci-homebrew-bintray/qcor-mojave/1.0.0 
