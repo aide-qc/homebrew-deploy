@@ -16,5 +16,5 @@ run brew tap aide-qc/deploy && apt-get update && apt-get install -y liblapack-de
     && git config remote.aideqchbdeploy.url >&- || git remote add -t master aideqchbdeploy https://amccaskey:$AIDEQC_ACCESS_TOKEN@github.com/aide-qc/homebrew-deploy \
     && git push -f aideqchbdeploy HEAD:master \
     && cd .. && brew install jfrog-cli \
-    && jfrog bt c --interactive=false --user=amccaskey --key=$JFROG_API_KEY
+    && jfrog bt c --interactive=false --user=amccaskey --key=$JFROG_API_KEY \
     && jfrog bt u --override --publish qcor-1.0.0.x86_64_linux.bottle.tar.gz amccaskey/qci-homebrew-bintray/qcor-linux-x86_64/1.0.0 
