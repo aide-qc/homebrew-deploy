@@ -16,7 +16,7 @@ class LlvmCsp < Formula
   bottle do
     root_url "https://github.com/ORNL-QCI/llvm-project-csp/releases/download/1.0.0"
     sha256 "99bcaa48f7f05f92f108763e434d5ffa06b2e732e3aa098d21205f4a8c250667" => :mojave
-    sha256 "9444eccc3cb6f1da379da4035fbd7eb50da0597bc0c68690c629930f73ee9640" => :x86_64_linux
+    sha256 "6834b6613ba55f8742ee9b8713e1bfa81d4ed7de0b8bb335509a8ca40fee6b53" => :x86_64_linux
   end
 
   def install
@@ -24,19 +24,19 @@ class LlvmCsp < Formula
     # Remove unrecognized options if warned by configure
     args = %W[
       -DBUILD_SHARED_LIBS=ON
-      -DLLVM_BUILD_LLVM_DYLIB=ON
       -DCMAKE_BUILD_TYPE=Release
       -DLLVM_TARGETS_TO_BUILD=X86
       -DLLVM_ENABLE_DUMP=ON
       -DLLVM_ENABLE_PROJECTS=clang
       -DCMAKE_CXX_COMPILER=g++-10
       -DCMAKE_C_COMPILER=gcc-10
+      -DCMAKE_INSTALL_PREFIX=#{prefix}
       -G Ninja
     ]
 
     llvmpath = buildpath
     mkdir llvmpath/"build" do
-       system "cmake", "../llvm", *(std_cmake_args + args)
+       system "cmake", "../llvm", *(args)
        system "cmake", "--build", ".", "--target", "install"
     end 
   end
