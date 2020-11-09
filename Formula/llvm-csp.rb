@@ -16,8 +16,13 @@ class LlvmCsp < Formula
   bottle do
     root_url "https://github.com/ORNL-QCI/llvm-project-csp/releases/download/1.0.0"
     sha256 "21d0e0c2f70aa6f9816a862cf078e79bf70a4e75b5503d52fe28c43883c50047" => :mojave
-    sha256 "6f726d530f734f3a043f966e53d5e68d658c375f46019fb4ad098a740e2647f3" => :catalina
+    sha256 "297795891e9599a2b7741a85c9119f4639e2ead0fdcb7c9733ac2aaa313bef9a" => :catalina
     sha256 "6834b6613ba55f8742ee9b8713e1bfa81d4ed7de0b8bb335509a8ca40fee6b53" => :x86_64_linux
+  end
+
+  pour_bottle? do
+    reason "The bottle needs the Xcode CLT to be installed."
+    satisfy { MacOS::CLT.installed? }
   end
 
   def install
@@ -34,6 +39,9 @@ class LlvmCsp < Formula
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -G Ninja
     ]
+
+    sdk = MacOS.sdk_path_if_needed
+    args << "-DDEFAULT_SYSROOT=#{sdk}" if sdk
 
     llvmpath = buildpath
     mkdir llvmpath/"build" do
