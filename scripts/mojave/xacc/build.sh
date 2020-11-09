@@ -12,7 +12,7 @@ export bottle_sha=$(shasum -a 256 xacc-1.0.0.mojave.bottle.tar.gz | cut -d " " -
 sed -i '' "s/   sha256 ".*" => :mojave/   sha256 \"$bottle_sha\" => :mojave/g" Formula/xacc.rb
 git config --global user.email "xacc-dev@eclipse.org"
 git config --global user.name "xacc ci bot" 
-git add Formula/qcor.rb && git commit -m "uploading updated xacc mojave bottle sha" 
+git add Formula/xacc.rb && git commit -m "uploading updated xacc mojave bottle sha" 
 git config remote.aideqchbdeploy.url >&- || git remote add -t master aideqchbdeploy https://amccaskey:$AIDEQC_ACCESS_TOKEN@github.com/aide-qc/homebrew-deploy 
 git push -f aideqchbdeploy HEAD:master 
 brew install jfrog-cli 
