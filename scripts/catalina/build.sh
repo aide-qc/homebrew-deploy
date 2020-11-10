@@ -3,7 +3,10 @@
 export AIDEQC_ACCESS_TOKEN=$1
 export JFROG_API_KEY=$2
 
-cd ../../
+set +x
+
+git clone https://github.com/homebrew-deploy
+cd homebrew-deploy
 brew tap aide-qc/deploy 
 
 #xacc
@@ -12,6 +15,7 @@ HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew bottle xacc
 mv xacc--* xacc-1.0.0.catalina.bottle.tar.gz 
 export bottle_sha=$(shasum -a 256 xacc-1.0.0.catalina.bottle.tar.gz | cut -d " " -f 1) 
 sed -i '' "s/   sha256 ".*" => :catalina/   sha256 \"$bottle_sha\" => :catalina/g" Formula/xacc.rb
+
 #qcor
 HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew install qcor --build-bottle --verbose 
 HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew bottle qcor 
@@ -35,3 +39,5 @@ jfrog bt u --override --publish qcor-1.0.0.catalina.bottle.tar.gz amccaskey/qci-
 # clean up
 brew uninstall xacc qcor
 brew untap aide-qc/deploy
+cd ..
+rm -rf homebrew-deploy
