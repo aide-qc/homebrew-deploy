@@ -20,11 +20,6 @@ class LlvmCsp < Formula
     sha256 "6834b6613ba55f8742ee9b8713e1bfa81d4ed7de0b8bb335509a8ca40fee6b53" => :x86_64_linux
   end
 
-  pour_bottle? do
-    reason "The bottle needs the Xcode CLT to be installed."
-    satisfy { MacOS::CLT.installed? }
-  end
-
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure

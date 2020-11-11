@@ -3,7 +3,7 @@ class Qcor < Formula
   homepage "https://github.com/ornl-qci/qcor"
   url "https://github.com/ornl-qci/qcor/tarball/master"
   version "1.0.0"
-  sha256 "a27dbb82837749980763bbdbe56619ecdc990632eed87a728afc6a83bbf95705"                                                             
+  sha256 "fae2dd3714dfece68190d90334fb1be9ea1254a8122a8a49a531d455bed425c4"                                                               
   license "BSD-3"
 
   depends_on "llvm-csp"
@@ -12,8 +12,8 @@ class Qcor < Formula
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
     sha256 "1fd1bf06af70c203c9672d6697779f1f7b0c2b3008ca50ed7d867d87af5e7546" => :mojave
-    sha256 "8982ba9edad5f144c59973be97b33f7b9319b072996f9324d300190cbe1218df" => :catalina
-    sha256 "2833f3e196bd6bac7afccd5e4ced9bae74ddfecc8905a340370a7c0d6f6bf995" => :x86_64_linux       
+    sha256 "" => :catalina
+    sha256 "587be5338fd0f117763b5c8cc3c16c824da6951cc64f84803d474c5a087a8ca0" => :x86_64_linux        
   end
 
   def install
