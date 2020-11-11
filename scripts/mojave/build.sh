@@ -5,7 +5,6 @@ export JFROG_API_KEY=$2
 
 set +x
 
-git clone https://github.com/homebrew-deploy
 cd homebrew-deploy
 brew tap aide-qc/deploy 
 
