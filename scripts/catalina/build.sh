@@ -8,6 +8,9 @@ set +x
 cd homebrew-deploy
 brew tap aide-qc/deploy 
 
+rm -rf ~/Library/Caches/Homebrew/downloads/*--ORNL-QCI-qcor-*
+rm -rf ~/Library/Caches/Homebrew/downloads/*--xacc-*
+
 #xacc
 HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew install xacc --build-bottle --verbose 
 HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew bottle xacc
