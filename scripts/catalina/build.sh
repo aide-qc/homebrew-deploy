@@ -6,6 +6,7 @@ export JFROG_API_KEY=$2
 set +x
 
 cd homebrew-deploy
+git pull
 brew tap aide-qc/deploy 
 
 rm -rf ~/Library/Caches/Homebrew/downloads/*--ORNL-QCI-qcor-*
@@ -41,5 +42,4 @@ jfrog bt u --override --publish qcor-1.0.0.catalina.bottle.tar.gz amccaskey/qci-
 # clean up
 brew uninstall xacc qcor
 brew untap aide-qc/deploy
-cd ..
-rm -rf homebrew-deploy
+
