@@ -3,7 +3,7 @@ from homebrew/ubuntu20.04
 ARG AIDEQC_ACCESS_TOKEN
 ARG JFROG_API_KEY
 
-run brew tap aide-qc/deploy && apt-get update && apt-get install -y liblapack-dev \ 
+run rm -rf /root/.cache/Homebrew/downloads/* && brew tap aide-qc/deploy && apt-get update && apt-get install -y liblapack-dev \ 
     && HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew install qcor --build-bottle --verbose \
     && HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew bottle qcor \
     && mv qcor--* qcor-1.0.0.x86_64_linux.bottle.tar.gz \ 
