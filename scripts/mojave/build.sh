@@ -34,7 +34,6 @@ git config remote.aideqchbdeploy.url >&- || git remote add -t master aideqchbdep
 git push -f aideqchbdeploy HEAD:master 
 
 # upload
-brew install jfrog-cli 
 jfrog bt c --interactive=false --user=amccaskey --key=$JFROG_API_KEY 
 jfrog bt u --override --publish xacc-1.0.0.mojave.bottle.tar.gz amccaskey/qci-homebrew-bintray/xacc-mojave/1.0.0 
 jfrog bt u --override --publish qcor-1.0.0.mojave.bottle.tar.gz amccaskey/qci-homebrew-bintray/qcor-mojave/1.0.0 
