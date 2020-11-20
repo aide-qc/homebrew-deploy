@@ -3,7 +3,7 @@
 export AIDEQC_ACCESS_TOKEN=$1
 export JFROG_API_KEY=$2
 
-set +x
+set -e
 
 cd homebrew-deploy
 git pull
