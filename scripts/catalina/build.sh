@@ -39,6 +39,7 @@ jfrog bt u --override --publish xacc-1.0.0.catalina.bottle.tar.gz amccaskey/qci-
 jfrog bt u --override --publish qcor-1.0.0.catalina.bottle.tar.gz amccaskey/qci-homebrew-bintray/qcor-catalina/1.0.0 
 
 # clean up
+rm -rf *.bottle.tar.gz 
 brew uninstall xacc qcor
 brew untap aide-qc/deploy
 
