@@ -3,7 +3,7 @@ class Xacc < Formula
   homepage "https://github.com/eclipse/xacc"
   url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray/xacc-1.0.0.tar.gz"
   version "1.0.0"
-  sha256 "9c3683ee401f9b4debc40b7e2da7c230ccd76a00827ec8211f3b3240a074fd57"                          
+  sha256 "48bb54cc514b819771475c6c91b6e0e2cdbe4414d0774d9bf6db13442af0e474"                           
   license "EPL and EDL"
 
   depends_on "cmake"
@@ -16,7 +16,7 @@ class Xacc < Formula
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
     sha256 "fbc43ca52c8df021301ac825b5e9b06a5480e73a33ed97600e539706d2e43226" => :mojave
-    sha256 "86efd689fc69b37867f02164ee8b93a0d88eb6ac26f3583a35f73fa629c6b926" => :catalina
+    sha256 "34155ca3d37b8b15cf2e13ff2f026891610af3558792ab590bc7079e33a1d104" => :catalina
     sha256 "b681ec6d55280adad00e40f1fbc2c8008b174ef554836667b2d4acb4aafa83d7" => :x86_64_linux                  
   end
 
