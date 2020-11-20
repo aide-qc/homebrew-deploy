@@ -3,7 +3,7 @@ class Qcor < Formula
   homepage "https://github.com/ornl-qci/qcor"
   url "https://github.com/ornl-qci/qcor/tarball/master"
   version "1.0.0"
-  sha256 "0369c84f113c71c970e4a01765aa493d244ddd18037c170965e648f8b805abad"                                                                           
+  sha256 "b72a830ec7136a46ea1487208ae026004d1a1d1a84adaa827425dda77b017532"                                                                            
   license "BSD-3"
 
   depends_on "llvm-csp"
