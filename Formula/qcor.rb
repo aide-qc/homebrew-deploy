@@ -18,6 +18,7 @@ class Qcor < Formula
 
   def install
     out = `python3 -c "import platform; print(platform.version().split('.')[0][-2:])"`
+    out.delete!("\n")
     args = %W[
       -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_CXX_COMPILER=#{HOMEBREW_PREFIX}/opt/gcc@10/bin/g++-10
