@@ -17,7 +17,7 @@ class Xacc < Formula
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
     sha256 "2db083994916702e444d0280e1907e30b01d346434cbec7f1c0c8d9fa1745224" => :mojave
     sha256 "fcd7a21d6850a8fb1f2c096164aeeb1ebd55f4f4adf5c415b0dc14a4641e0ec6" => :catalina
-    sha256 "4f5f5cf564a98306f358835d690f9308a0c572fcaa7a8c73daf735a4ec40d1f4" => :x86_64_linux                     
+    sha256 "96c9dcd7c6a5ffe549f5be6bd2c990382d0e365c37282ed596d71633b97da482" => :x86_64_linux                      
   end
 
   def install
