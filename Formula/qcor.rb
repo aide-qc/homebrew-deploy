@@ -13,7 +13,7 @@ class Qcor < Formula
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
     sha256 "2d60b9febbf54c1eb82f54493f2875cb6018558a405359543184b1bb3d132772" => :mojave
     sha256 "8ca0a821cad8b9042a9bf5becda110a3df2b025048a56a696275096bdf36328c" => :catalina
-    sha256 "950eecf25e5912773ba07ad93d42beaca7a82e25d4380e4eb6e58804e1646aa5" => :x86_64_linux                         
+    sha256 "5855fc05f6d021cb45fc49c1c4214287baa3c03d92099fd845d07affcb5d3f58" => :x86_64_linux                          
   end
 
   def install
@@ -25,7 +25,6 @@ class Qcor < Formula
       -DCMAKE_C_COMPILER=#{HOMEBREW_PREFIX}/opt/gcc@10/bin/gcc-10
       -DXACC_DIR=#{HOMEBREW_PREFIX}/opt/xacc
       -DLLVM_ROOT=#{HOMEBREW_PREFIX}/opt/llvm-csp 
-      -G Ninja
     ]
 
     if OS.mac?
