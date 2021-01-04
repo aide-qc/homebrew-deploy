@@ -3,7 +3,7 @@ class Xacc < Formula
   homepage "https://github.com/eclipse/xacc"
   url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray/xacc-1.0.0.tar.gz"
   version "1.0.0"
-  sha256 "99ada0f380f528dc42aacd9d16a8b6e82f9cbd16d294085866deba66f3db76b5"                                              
+  sha256 "8713d55d97aaa73c43537abcf96932ee3ba822bf770c1030d4855f4f9952e2d4"                                               
   license "EPL and EDL"
 
   depends_on "cmake"
