@@ -17,7 +17,7 @@ class LlvmCsp < Formula
     root_url "https://github.com/ORNL-QCI/llvm-project-csp/releases/download/1.0.0"
     sha256 "dff4e797e49e9adf43f27f10f608d9c5cc9e3e39f89365ac7840d89a174a1e11" => :mojave
     sha256 "2644b12d74f2cd5dee63bcd7a101cebfd8bbe54c27d83ec69a1e04df2696423a" => :catalina
-    sha256 "cced6a717771033bdd31ef77223723ac8be38eefd760cd432390d97e6c5c6c7f" => :x86_64_linux
+    sha256 "4a7c6a6d207de796f307cdabde51862b656bf535e8e41625db93e9f861672934" => :x86_64_linux
   end
 
   def install
