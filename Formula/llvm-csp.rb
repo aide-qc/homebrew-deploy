@@ -4,9 +4,9 @@
 class LlvmCsp < Formula
   desc "clang syntax handler"
   homepage "https://github.com/hfinkel/llvm-project-csp"
-  url "https://github.com/hfinkel/llvm-project-csp/tarball/csplugin"
+  url "https://github.com/ornl-qci/llvm-project-csp/tarball/csplugin"
   version "1.0.0"
-  sha256 "2df409617c290ddec870be5c84e21b6c7413f9531e778e6f8555762a951248cf"
+  sha256 "82647e71d2743d3fcbfd0627b3bb8cd7bd1a8baf83d218691f443ca90b85da40"
   license "Apache 2.0"
 
   depends_on "cmake" => :build
@@ -28,7 +28,7 @@ class LlvmCsp < Formula
       -DCMAKE_BUILD_TYPE=Release
       -DLLVM_TARGETS_TO_BUILD=X86
       -DLLVM_ENABLE_DUMP=ON
-      -DLLVM_ENABLE_PROJECTS=clang
+      -DLLVM_ENABLE_PROJECTS="clang;mlir"
       -DCMAKE_CXX_COMPILER=g++-10
       -DCMAKE_C_COMPILER=gcc-10
       -DCMAKE_INSTALL_PREFIX=#{prefix}
