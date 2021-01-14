@@ -21,6 +21,11 @@ class LlvmCsp < Formula
   end
 
   def install
+    projects = %w[
+      clang
+      mlir
+    ]
+
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     args = %W[
@@ -28,7 +33,7 @@ class LlvmCsp < Formula
       -DCMAKE_BUILD_TYPE=Release
       -DLLVM_TARGETS_TO_BUILD=X86
       -DLLVM_ENABLE_DUMP=ON
-      -DLLVM_ENABLE_PROJECTS="clang;mlir"
+      -DLLVM_ENABLE_PROJECTS=#{projects.join(";")}
       -DCMAKE_CXX_COMPILER=g++-10
       -DCMAKE_C_COMPILER=gcc-10
       -DCMAKE_INSTALL_PREFIX=#{prefix}
