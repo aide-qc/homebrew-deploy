@@ -16,7 +16,7 @@ class LlvmCsp < Formula
   bottle do
     root_url "https://github.com/ORNL-QCI/llvm-project-csp/releases/download/1.0.0"
     sha256 "b8b7ddefb66129f65ce68df6cfb3d05dc3215099fa0959fff13880a4ef29c5e9" => :mojave
-    sha256 "2644b12d74f2cd5dee63bcd7a101cebfd8bbe54c27d83ec69a1e04df2696423a" => :catalina
+    sha256 "13878ec5841f054f8620aaf8c9be42ff9e98b6ea5cddc60713aa417a5ce65014" => :catalina
     sha256 "4a7c6a6d207de796f307cdabde51862b656bf535e8e41625db93e9f861672934" => :x86_64_linux
   end
 
