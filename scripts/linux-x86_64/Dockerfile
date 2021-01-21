@@ -12,7 +12,7 @@ run brew tap aide-qc/deploy && apt-get update && apt-get install -y liblapack-de
     # && git clone https://github.com/aide-qc/homebrew-deploy && cd homebrew-deploy \
     # && sed -i "0,/sha256 \".*\" => :x86_64_linux/s//sha256 \"$bottle_sha\" => :x86_64_linux /" Formula/xacc.rb \
     #qcor
-    && cd ../ && HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew install qcor --build-bottle --verbose \
+    && HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew install qcor --build-bottle --verbose \
     && HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=false brew bottle qcor \
     && mv qcor--* qcor-1.0.0.x86_64_linux.bottle.tar.gz \ 
     # && export bottle_sha=$(sha256sum qcor-1.0.0.x86_64_linux.bottle.tar.gz | cut -d " " -f 1) \
