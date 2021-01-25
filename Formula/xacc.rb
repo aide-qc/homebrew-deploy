@@ -8,10 +8,13 @@ class Xacc < Formula
 
   depends_on "cmake"
   depends_on "ninja"
-  depends_on "gcc@10" 
   depends_on "python3"
   depends_on "openssl"
   depends_on "curl"
+
+  if !OS.mac?
+    depends_on "gcc@10"
+  end
 
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
@@ -23,8 +26,6 @@ class Xacc < Formula
   def install
     args = %W[
       -DCMAKE_BUILD_TYPE=Release
-      -DCMAKE_CXX_COMPILER=g++-10
-      -DCMAKE_C_COMPILER=gcc-10
     ]
 
     xaccpath = buildpath

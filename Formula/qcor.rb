@@ -17,20 +17,15 @@ class Qcor < Formula
   end
 
   def install
-    out = `python3 -c "import platform; print(platform.version().split('.')[0][-2:])"`
-    out.delete!("\n")
     args = %W[
       -DCMAKE_BUILD_TYPE=Release
-      -DCMAKE_CXX_COMPILER=#{HOMEBREW_PREFIX}/opt/gcc@10/bin/g++-10
-      -DCMAKE_C_COMPILER=#{HOMEBREW_PREFIX}/opt/gcc@10/bin/gcc-10
       -DXACC_DIR=#{HOMEBREW_PREFIX}/opt/xacc
       -DLLVM_ROOT=#{HOMEBREW_PREFIX}/opt/llvm-csp 
     ]
 
     if OS.mac?
       args += %W[
-       -DQCOR_EXTRA_HEADERS="#{HOMEBREW_PREFIX}/opt/gcc@10/include/c++/10.2.0;#{HOMEBREW_PREFIX}/opt/gcc@10/include/c++/10.2.0/x86_64-apple-darwin#{out}"
-       -DGCC_STDCXX_PATH=#{HOMEBREW_PREFIX}/opt/gcc@10/lib/gcc/10
+        -DQCOR_EXTRA_HEADERS="/Library/Developer/CommandLineTools/usr/include/c++/v1"
       ]
     end
     
