@@ -13,7 +13,7 @@ class Qcor < Formula
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
     sha256 "ca8c9f8444629af5b131d89442621acf57468e432e4b98b5f716b6b95b928d45" => :mojave
     sha256 "3c31d593bb8fbe54ebf7dfec48f5a987188b0d711150d4973a4d6394bd3c8c29" => :catalina
-    sha256 "3a34f86b84aef0e558beb457d4b785c2c4ad621f09e03eacd1bc3d15cb02989f" => :x86_64_linux
+    sha256 "4c93106cdc0a48863f3718296d8db885859d02303c8fa0769c2a5e8cd413cce3" => :x86_64_linux
   end
 
   def install
