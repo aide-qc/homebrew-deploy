@@ -25,7 +25,7 @@ class Qcor < Formula
 
     if OS.mac?
       args += %W[
-        -DQCOR_EXTRA_HEADERS="/Library/Developer/CommandLineTools/usr/include/c++/v1"
+        -DQCOR_EXTRA_HEADERS="/Library/Developer/CommandLineTools/usr/include/c++/v1;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
       ]
     end
     
