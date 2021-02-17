@@ -11,7 +11,7 @@ class Qcor < Formula
 
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
-    sha256 "c66a4586d92d2eccb21287410902ab62c0fa144926db9b87ac1bed0710725903" => :mojave
+    sha256 "1e42ad11b15e8d79c3fd14889805fa3b56542945dfc0bf14d58cb8e0927fe99e" => :mojave
     sha256 "bd10a3178ad2eecc7d7411008b7d09bdaca129f29149a0ca970f57bc23b1d425" => :catalina
     sha256 "bcc60c208dd492ad9f04237da8bcfed7ce52f8409e9e6f6df9ee72a24b525432" => :x86_64_linux
   end
