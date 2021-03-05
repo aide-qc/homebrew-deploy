@@ -12,10 +12,6 @@ class Xacc < Formula
   depends_on "openssl"
   depends_on "curl"
 
-  if !OS.mac?
-    depends_on "gcc@10"
-  end
-
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
     sha256 "46c97471ad0a13cba519293074ed8695c7c8225f874d0e89a7a1ec62fe141a16" => :mojave
