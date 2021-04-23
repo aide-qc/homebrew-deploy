@@ -14,7 +14,7 @@ class Xacc < Formula
 
   bottle do
     root_url "https://dl.bintray.com/amccaskey/qci-homebrew-bintray"
-    sha256 "454a14b53c998354f216d0a2576f39ee4f1cdcd1e51a631b3eb2953223f6b639" => :mojave
+    sha256 "ae7bdbbd461d1da33b73c3d960eafac15b01d08e8045b81983f447b6fb3edc1e" => :mojave
     sha256 "270e8640c7c6d393ce8edca4b0adce6d65cc397e35bdf3aa79e92112f0444621" => :catalina
     sha256 "852173f23c29133de5e2ec568e1c039b25f7293859585f820c4833edbf0b29ca" => :x86_64_linux
   end
