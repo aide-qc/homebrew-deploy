@@ -14,7 +14,7 @@ class Xacc < Formula
 
   bottle do
     root_url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1"
-    sha256 "656cb3f01eecafb4f56d2ca22c57faa8cb243f1ca0d8e4990bc8d9f282a5964d" => :mojave
+    sha256 "2681665fc7111381086e045764715501e66f85dc6af128e42154f09aef82f364" => :mojave
     sha256 "6123fe25cea79bf0663cb1a68610f416a2382f8b4b838081491c1431fb201baa" => :catalina
     sha256 "003d4d36ee20f1afc73de12c273392267998b1318221c3f9c717b88ec5060381" => :x86_64_linux
   end
