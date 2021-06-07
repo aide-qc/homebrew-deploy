@@ -13,7 +13,7 @@ class Qcor < Formula
     root_url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1"
     sha256 "6005fb19722d10dc10b03184d0c3a28310e950f9678cf4b5012b68e46a216dd1" => :mojave
     sha256 "74355f0224f9b50d58d9b4bd5033eecc9f09ff9497184d4118650aad2ab760b3" => :catalina
-    sha256 "3416594c54d727ba1eca58626a27e046d80c96aee4f28f9034f2a2ba830dccc7" => :x86_64_linux
+    sha256 "a078b18c5404fbfd83a51b8c5eed17ed65bf4fe42a8724dd7c424664f5de8bbd" => :x86_64_linux
   end
 
   def install
