@@ -143,8 +143,8 @@ for _os in ['mojave', 'catalina', 'x86_64_linux']:
 
         new_xacc_rb_file_str = ''
         for line in xacc_rb_file_lines:
-            if 'sha256' in line and '=> :{}'.format(_os) in line:
-                new_xacc_rb_file_str += '    sha256 "'+current_shasum+'" => :{}\n'.format(_os)
+            if 'sha256 {}:'.format(_os) in line: # and '=> :{}'.format(_os) in line:
+                new_xacc_rb_file_str += '    sha256 {}: "{}"\n'.format(_os,current_shasum)
             else:
                 new_xacc_rb_file_str += line
         print(new_xacc_rb_file_str)
@@ -174,8 +174,10 @@ for _os in ['mojave', 'catalina', 'x86_64_linux']:
 
         new_qcor_rb_file_str = ''
         for line in qcor_rb_file_lines:
-            if 'sha256' in line and '=> :{}'.format(_os) in line:
-                new_qcor_rb_file_str += '    sha256 "'+current_shasum+'" => :{}\n'.format(_os)
+            if 'sha256 {}:'.format(_os) in line: # and '=> :{}'.format(_os) in line:
+                new_qcor_rb_file_str += '    sha256 {}: "{}"\n'.format(_os,current_shasum)
+            # if 'sha256' in line and '=> :{}'.format(_os) in line:
+            #     new_qcor_rb_file_str += '    sha256 "'+current_shasum+'" => :{}\n'.format(_os)
             else:
                 new_qcor_rb_file_str += line
         print(new_qcor_rb_file_str)
