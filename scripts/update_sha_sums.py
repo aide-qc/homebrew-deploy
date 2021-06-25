@@ -88,14 +88,16 @@ if xacc_commit_hash != cached_sums['xacc']['git']:
     with open('homebrew-deploy/Formula/xacc.rb', 'w') as fout:
         fout.write(new_xacc_rb_file_str)
         homebrew_changes_occured = True
-        git_message += 'automated bot updating xacc source hash: {} to {}.'.format(cached_sums['xacc']['source'], xacc_src_hash)
+        git_message += 'automated bot updating xacc source hash: {} to {}.\n'.format(cached_sums['xacc']['source'], xacc_src_hash)
     
     cached_sums['xacc']['source'] = xacc_src_hash
     cached_sums['xacc']['git'] = xacc_commit_hash
 
-    # and then push new xacc source tar with jfrog
-    run_command(os.getcwd(), 'jfrog', 'bt', 'u', '--override', '--publish', 'xacc-1.0.0.tar.gz', 'amccaskey/qci-homebrew-bintray/xacc-source/xacc-1.0.0')
+    # OLD and then push new xacc source tar with jfrog
+    #run_command(os.getcwd(), 'jfrog', 'bt', 'u', '--override', '--publish', 'xacc-1.0.0.tar.gz', 'amccaskey/qci-homebrew-bintray/xacc-source/xacc-1.0.0')
 
+    #gh release upload --repo amccaskey/test-release 0.0.2 xacc-1.0.0.x86_64_linux.bottle.tar.gz --clobber 
+    run_command(os.getcwd(), 'gh', 'release', 'upload', '--repo', 'aide-qc/aide-qc', '0.0.1', 'xacc-1.0.0.tar.gz', '--clobber')
 
 if qcor_commit_hash != cached_sums['qcor']['git']:
     run_command(os.getcwd(), 'wget', 'https://github.com/ornl-qci/qcor/tarball/master')
@@ -117,7 +119,7 @@ if qcor_commit_hash != cached_sums['qcor']['git']:
     with open('homebrew-deploy/Formula/qcor.rb', 'w') as fout:
         fout.write(new_qcor_rb_file_str)
         homebrew_changes_occured = True
-        git_message += 'automated bot updating qcor source hash: {} to {}.'.format(cached_sums['qcor']['source'], qcor_src_hash)
+        git_message += 'automated bot updating qcor source hash: {} to {}.\n'.format(cached_sums['qcor']['source'], qcor_src_hash)
 
     cached_sums['qcor']['source'] = qcor_src_hash
     cached_sums['qcor']['git'] = qcor_commit_hash
@@ -128,7 +130,8 @@ run_command(os.getcwd(), 'rm', '-rf', 'xacc-1.0.0.tar.gz')
 
 # pull xacc bottles and check their shasums, update homebrew if necessary
 for _os in ['mojave', 'catalina', 'x86_64_linux']:
-    base_url = 'https://dl.bintray.com/amccaskey/qci-homebrew-bintray/'
+    base_url = 'https://github.com/aide-qc/aide-qc/releases/download/0.0.1/'
+#    base_url = 'https://dl.bintray.com/amccaskey/qci-homebrew-bintray/'
     file_name = 'xacc-1.0.0.{}.bottle.tar.gz'.format(_os)
     print('downloading xacc {}'.format(_os))
     wget.download(base_url+file_name)
@@ -143,6 +146,8 @@ for _os in ['mojave', 'catalina', 'x86_64_linux']:
 
         new_xacc_rb_file_str = ''
         for line in xacc_rb_file_lines:
+#            if 'sha256' in line and '=> :{}'.format(_os) in line:
+#                new_xacc_rb_file_str += '    sha256 "'+current_shasum+'" => :{}\n'.format(_os)
             if 'sha256 {}:'.format(_os) in line: # and '=> :{}'.format(_os) in line:
                 new_xacc_rb_file_str += '    sha256 {}: "{}"\n'.format(_os,current_shasum)
             else:
@@ -151,7 +156,7 @@ for _os in ['mojave', 'catalina', 'x86_64_linux']:
         with open('homebrew-deploy/Formula/xacc.rb', 'w') as fout:
             fout.write(new_xacc_rb_file_str)
             homebrew_changes_occured = True
-            tmp = 'automated bot updating xacc {} bottle hash: {} to {}'.format(_os, cached_sums['xacc'][_os], current_shasum)
+            tmp = 'automated bot updating xacc {} bottle hash: {} to {}\n'.format(_os, cached_sums['xacc'][_os], current_shasum)
             git_message += tmp
             print(tmp)
         
@@ -174,17 +179,17 @@ for _os in ['mojave', 'catalina', 'x86_64_linux']:
 
         new_qcor_rb_file_str = ''
         for line in qcor_rb_file_lines:
+#            if 'sha256' in line and '=> :{}'.format(_os) in line:
+#                new_qcor_rb_file_str += '    sha256 "'+current_shasum+'" => :{}\n'.format(_os)
             if 'sha256 {}:'.format(_os) in line: # and '=> :{}'.format(_os) in line:
                 new_qcor_rb_file_str += '    sha256 {}: "{}"\n'.format(_os,current_shasum)
-            # if 'sha256' in line and '=> :{}'.format(_os) in line:
-            #     new_qcor_rb_file_str += '    sha256 "'+current_shasum+'" => :{}\n'.format(_os)
             else:
                 new_qcor_rb_file_str += line
         print(new_qcor_rb_file_str)
         with open('homebrew-deploy/Formula/qcor.rb', 'w') as fout:
             fout.write(new_qcor_rb_file_str)
             homebrew_changes_occured = True
-            tmp = 'automated bot updating qcor {} bottle hash: {} to {}'.format(_os, cached_sums['qcor'][_os], current_shasum)
+            tmp = 'automated bot updating qcor {} bottle hash: {} to {}\n'.format(_os, cached_sums['qcor'][_os], current_shasum)
             git_message += tmp
             print(tmp)
             
