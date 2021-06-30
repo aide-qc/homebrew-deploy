@@ -3,14 +3,14 @@ class Qcor < Formula
   homepage "https://github.com/ornl-qci/qcor"
   url "https://github.com/ornl-qci/qcor/tarball/master"
   version "1.0.0"
-  sha256 "93849e6c0bbbf1003209fa1fa6851fb210295d80e25e3b99961b7c9b4ff58361"
+  sha256 "cf98c11ff8bd373f98a68c9d747b3d21bad169b03ddf38bd89b284d21d0e9c65"
   license "BSD-3"
 
   bottle do
     root_url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1"
-  sha256 "93849e6c0bbbf1003209fa1fa6851fb210295d80e25e3b99961b7c9b4ff58361"
-  sha256 "93849e6c0bbbf1003209fa1fa6851fb210295d80e25e3b99961b7c9b4ff58361"
-  sha256 "93849e6c0bbbf1003209fa1fa6851fb210295d80e25e3b99961b7c9b4ff58361"
+  sha256 "cf98c11ff8bd373f98a68c9d747b3d21bad169b03ddf38bd89b284d21d0e9c65"
+  sha256 "cf98c11ff8bd373f98a68c9d747b3d21bad169b03ddf38bd89b284d21d0e9c65"
+  sha256 "cf98c11ff8bd373f98a68c9d747b3d21bad169b03ddf38bd89b284d21d0e9c65"
   end
 
   depends_on "llvm-csp"
