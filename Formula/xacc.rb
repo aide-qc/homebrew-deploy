@@ -3,14 +3,14 @@ class Xacc < Formula
   homepage "https://github.com/eclipse/xacc"
   url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1/xacc-1.0.0.tar.gz"
   version "1.0.0"
-  sha256 "4c3fc3acfcf9380da7ee3a9e9151cdcebc5fa2fb90367cbd0ccfebbca65853bb"
+  sha256 "ee5bb712b3a8516b196438f2377cc0acda612861d8065f8cdbd23e0f06958384"
   license "EPL and EDL"
 
   bottle do
     root_url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1"
-  sha256 "4c3fc3acfcf9380da7ee3a9e9151cdcebc5fa2fb90367cbd0ccfebbca65853bb"
-  sha256 "4c3fc3acfcf9380da7ee3a9e9151cdcebc5fa2fb90367cbd0ccfebbca65853bb"
-  sha256 "4c3fc3acfcf9380da7ee3a9e9151cdcebc5fa2fb90367cbd0ccfebbca65853bb"
+  sha256 "ee5bb712b3a8516b196438f2377cc0acda612861d8065f8cdbd23e0f06958384"
+  sha256 "ee5bb712b3a8516b196438f2377cc0acda612861d8065f8cdbd23e0f06958384"
+  sha256 "ee5bb712b3a8516b196438f2377cc0acda612861d8065f8cdbd23e0f06958384"
   end
 
   depends_on "cmake"
