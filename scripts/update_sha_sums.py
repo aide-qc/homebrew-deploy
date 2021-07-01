@@ -80,7 +80,7 @@ if xacc_commit_hash != cached_sums['xacc']['git']:
 
     new_xacc_rb_file_str = ''
     for line in xacc_rb_file_lines:
-        if 'sha256' in line and '=>' not in line:
+        if 'sha256' in line and ':' not in line:
             new_xacc_rb_file_str += '  sha256 "'+xacc_src_hash+'"\n'
         else:
             new_xacc_rb_file_str += line
@@ -111,7 +111,7 @@ if qcor_commit_hash != cached_sums['qcor']['git']:
 
     new_qcor_rb_file_str = ''
     for line in qcor_rb_file_lines:
-        if 'sha256' in line and '=>' not in line:
+        if 'sha256' in line and ':' not in line:
             new_qcor_rb_file_str += '  sha256 "'+qcor_src_hash+'"\n'
         else:
             new_qcor_rb_file_str += line
