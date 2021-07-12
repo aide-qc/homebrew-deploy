@@ -33,6 +33,7 @@ class Qcor < Formula
     mkdir qcorpath/"build" do
       system "cmake", "..", *(std_cmake_args + args)
       system "cmake", "--build", ".", "--target", "install"
+      system "#{prefix}/bin/qcor", "-rebuild-pch", "-v"
     end
   end
 end
