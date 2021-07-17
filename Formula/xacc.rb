@@ -8,7 +8,7 @@ class Xacc < Formula
 
   bottle do
     root_url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1"
-    sha256 catalina: "84ebde63c8eb671cd14e8d7c3fdee472440408aaf08b3e458b0c137f724b6299"
+    sha256 catalina: "992ac53dd0615fdfc574b27fbc2c18157bbfe242304f22eab6bebd849744f3a9"
     sha256 mojave: "de596b3e83f7704afd2fc6f93d0feb9771f7024f2cc5a77ee87a71e4b6ad4cc3"
     sha256 x86_64_linux: "d1d8025855472f6f8b1d46ce68cd8bab9b67180258e58222442d948ea7ca81e0"
   end
