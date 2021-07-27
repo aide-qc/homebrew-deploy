@@ -8,7 +8,7 @@ class Qcor < Formula
 
   bottle do
     root_url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1"
-    sha256 catalina: "546b630e892a69cceff1e8b82687ee36edf9cc52ea2829c00fb332a0cdc54698"
+    sha256 catalina: "808c9f255fcfbe986945fc4d7bf23d4ca1315a47f677f9d40c88202cf682f7e9"
     sha256 mojave: "f6bb138abec969782b7f2faa922b3f20844b8c615632a981c0e968b0a44ce3d4"
     sha256 x86_64_linux: "7a8de08f8f6c7c0a69323112c9c22d5d609949d499448e4a7b68da7fae2640d2"
   end
