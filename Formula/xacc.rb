@@ -10,7 +10,7 @@ class Xacc < Formula
     root_url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1"
     sha256 catalina: "15511a32fbf6401d0c2892c836eb888a633e7293a70e05d1534c850274531b74"
     sha256 mojave: "b13bce5a35fbebd4677261adc3c5f4e8d46aaa96b092a24ea3cfa1cda158e0c4"
-    sha256 x86_64_linux: "505ab2eef1a2f967cadf7f0689646806452421bf8c2b9098f3d212bf880ef997"
+    sha256 x86_64_linux: "ec8691928b93012ef479cba11202eaf8fe30a0d352a848c214858e0a8b2424d2"
   end
 
   depends_on "cmake"
