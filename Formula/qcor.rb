@@ -10,7 +10,7 @@ class Qcor < Formula
     root_url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1"
     sha256 catalina: "49597ae1326c003b7b560d0d908d87b6e53f69326652341a00c176a9cc1225f9"
     sha256 mojave: "67b355e009c292edf16d209bc5bbf68dbedef926b547eae275ac1641e77edeea"
-    sha256 x86_64_linux: "bf7e01a764c173685493871a44fc0d841da1094ac03becc39ca21e9ad765dc5a"
+    sha256 x86_64_linux: "1e6d946398235e0e10c0a7731c4568485fb08c6cfac88e8f399300e3539b3bd6"
   end
 
   depends_on "llvm-csp"
