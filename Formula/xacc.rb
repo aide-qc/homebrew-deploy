@@ -3,7 +3,7 @@ class Xacc < Formula
   homepage "https://github.com/eclipse/xacc"
   url "https://github.com/aide-qc/aide-qc/releases/download/0.0.1/xacc-1.0.0.tar.gz"
   version "1.0.0"
-  sha256 "8c587e80cc00b419755f3a66be41fca87b24fc8e96fb765fda10d4c861e54804"
+  sha256 "ecac6b50ef697b09fe17778b6594b2c03a4a62b265ab5da5217f574f60698834"
   license "EPL and EDL"
 
   bottle do
